@@ -41,7 +41,7 @@ exit from the container with CTRL+D
 Injection of ooorest and devise in a basic Rails app
 
 ```
-cd rails-app
+cd ooorest-app
 vi Gemfile
 ```
 
