@@ -81,6 +81,11 @@ Pay attention to the instructions to configure the mailer if you need to
 ```
 bundle exec rails generate devise User
 bundle exec rails g devise:views
+```
+
+Initialize the database if needed (if you cloned the Rails app you need to do it):
+
+```
 bundle exec rake db:migrate
 ```
 
