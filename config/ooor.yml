@@ -1,0 +1,7 @@
+development:
+  url: http://localhost:8069/xmlrpc         #the OpenERP XML/RPC server
+  database: db               #the OpenERP database you want to connect to
+  username: admin
+  password: admin
+  global_context:
+    'lang': en_US
