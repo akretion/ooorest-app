@@ -1,6 +1,12 @@
-GIT
-  remote: https://github.com/akretion/ooorest.git
-  revision: ffe3e2058f798ad0e192d8caab5c516f6c3a71ec
+PATH
+  remote: ../../ooor
+  specs:
+    ooor (2.1.0)
+      activemodel (>= 3.2.0)
+      faraday
+
+PATH
+  remote: ../../ooorest
   specs:
     ooorest (1.9.9)
       actionpack (>= 3.1)
@@ -8,13 +14,6 @@ GIT
       ooor (>= 1.9)
       railties (>= 3.1)
       warden
-
-PATH
-  remote: ../../ooor
-  specs:
-    ooor (2.1.0)
-      activemodel (>= 3.2.0)
-      faraday
 
 GEM
   remote: https://rubygems.org/

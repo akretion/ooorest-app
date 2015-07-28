@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'devise' # not required for ooorest but we will use it here
-gem 'ooorest', git: 'https://github.com/akretion/ooorest.git'
 gem 'ooor', path: '../../ooor'
+gem 'ooorest', path: '../../ooorest'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
