@@ -89,9 +89,24 @@ Initialize the database if needed (if you cloned the Rails app you need to do it
 bundle exec rake db:migrate
 ```
 
+You can now see the available routes with:
 
-Launch the Rails app:
+```
+bundle exec rake routes
+```
+
+Finally Launch the Rails app:
 
 ```
 bundle exec rails s
 ```
+
+You can try to navigate to http://localhost:3000/ooorest/res-users/1.json for instance.
+It will tell you you need to be authenticated.
+You can see the authentication redirection if you browse instead http://localhost:3000/ooorest/res-users/1 (without .json).
+So you can create a new account or login. After that, when requesting the HTML response format, you'll get a template error.
+This would only work if you install the extra aktooor gem in your Gemfile. But here we don't need HTML templates, that was just to demo the authentication re-direction.
+Your browser now has indeed a proper authentication cookie, so you can simply browse http://localhost:3000/ooorest/res-users/1.json again and this time it will work.
+
+In the server console log, you can see that the Devise user email is properly forwared to Odoo in the context of the requests.
+
