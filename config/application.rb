@@ -6,7 +6,13 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RailsApp
+module OoorestApp
+
+  ::Ooor::Rack.ooor_session_config_mapper do |env|
+    # The following injects the Devise current_user email in the context of Odoo requests:
+    {connection_session: {lang: 'fr_FR', email: env['warden'].user.try(:email)}}
+  end
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
