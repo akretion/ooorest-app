@@ -3,5 +3,6 @@ development:
   database: db               #the OpenERP database you want to connect to
   username: admin
   password: admin
+  authenticate_ooorest: true
   global_context:
     'lang': en_US
