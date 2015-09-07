@@ -13,6 +13,13 @@ module OoorestApp
     {connection_session: {lang: 'fr_FR', email: env['warden'].user.try(:email)}}
   end
 
+  ::Ooor::Rack.decorate_env do |env|
+    if env['warden'].user
+      partner = env['ooor']['ooor_session'].const_get('res.partner').find(:first)
+      env['warden'].user.partner = partner
+    end
+  end
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
