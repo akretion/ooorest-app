@@ -2,13 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   mount Ooorest::Engine => "/ooorest"
 
-#  devise_scope :user do
-
   post "devise_api/create", :to => 'devise_api#create'
   post "devise_api/update/:id", :to => 'devise_api#update'
   post "devise_api/destroy/:id", :to => 'devise_api#destroy'
-
-#  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
