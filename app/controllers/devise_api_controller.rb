@@ -3,6 +3,7 @@ class DeviseApiController < ActionController::Base
   def create
     ensure_auth
     user = User.create email: params[:email]
+    user.send_reset_password_instructions
     respond_to do |format|
       format.json { render json: user.id, layout: false }
     end
@@ -16,12 +17,14 @@ class DeviseApiController < ActionController::Base
     respond_to do |format|
       format.json { render json: true, layout: false }
     end
-
   end
 
   def destroy
     ensure_auth
-    # TODO
+    User.destroy(params[:id])
+    respond_to do |format|
+      format.json { render json: true, layout: false }
+    end
   end
 
   private
