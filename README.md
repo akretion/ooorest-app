@@ -71,8 +71,6 @@ Note that you'll need to link that container to the voodoo container. You can fi
 devstep hack -p 3000:3000 --link <voodoo_container_name>:odoo
 ```
 
-NOTE: I had a bug with the Rails server not being accessible on localhost:3000 (network rested by peer error). So instead I did a regular bundle install on the host
-
 Inside the container, finish to install Devise:
 rails generate devise:install
 
@@ -98,7 +96,7 @@ bundle exec rake routes
 Finally Launch the Rails app:
 
 ```
-bundle exec rails s
+bundle exec rails s -b0.0.0.0
 ```
 
 You can try to navigate to http://localhost:3000/ooorest/res-users/1.json for instance.
