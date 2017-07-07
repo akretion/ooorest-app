@@ -10,6 +10,7 @@ install http://voodoo.akretion.com/
 voodoo new voodoo-ooorest
 cd voodoo-ooorest
 voodoo run
+ak build
 ak run
 ```
 
